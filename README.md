@@ -332,11 +332,26 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
 ---
 ## <a name=future-enhancement>🚀 Future Enhancement</a>
 
-👉 **Download Assets**:  
-  - Allowing users to download assets to their local devices and view anytime.
+### **1. Advanced State Management**  
+  - **Download Assets**:  
+    In the future, users will be able to download assets to their local devices for offline viewing. This feature will allow users to access and interact with content even when not connected to the internet.
 
-👉 **Advanced Filtering**:  
-  - Allow users to filter results by date range, media type, or collection.
+  - **Advanced Filtering**:  
+    We plan to implement advanced filtering options. Users will be able to filter assets by specific date ranges, or even by collections, to refine their search results and find relevant content more efficiently.
 
-👉 **Favorite Assets**:  
-  - Enabling users to save favorite items for them to view later.
+  - **Favorite Assets**:  
+    This feature will enable users to save their favorite assets for later viewing. Users can mark assets they like and return to them anytime.
+
+---
+
+### **2. Local Storage Integration**  
+
+In this update, we have introduced a system to **persist search results and history** even when the user navigates away or refreshes the page.
+
+  - **Search Results Persistence**:  
+    - Search results are now stored in **local storage**. When a user performs a search, the results are saved, ensuring that the user can come back to the same results even after a page reload or navigation.
+    - This feature enhances user experience by making the app feel faster and more consistent.
+
+  - **Search History**:  
+    - We’ve also implemented **search history** functionality. The last few searches are stored in local storage, so users can quickly revisit their previous queries without retyping.
+    - Users can see a list of recent searches and select one to perform again, making the app more convenient and efficient to use.

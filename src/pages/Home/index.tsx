@@ -63,6 +63,12 @@ export const Home: React.FC = () => {
           <div className="flex items-center justify-center w-full h-64">
             <ScaleLoader color={"#ffffff"} loading={loading} />
           </div>
+        ) : results.length === 0 ? ( // checking if no results exist
+          <div className="flex items-center justify-center w-full h-64">
+            <p className="text-xl font-semibold text-gray-500">
+              No results found
+            </p>
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-4 items-stretch">
             {currentResults.map((asset) => (
