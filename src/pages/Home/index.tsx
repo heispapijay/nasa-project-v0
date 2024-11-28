@@ -7,7 +7,6 @@ import { Layout } from "./Layout";
 import { PagePagination } from "./PagePagination";
 import { SearchInput } from "./SearchInput";
 
-
 const ITEMS_PER_PAGE = 6;
 
 export const Home: React.FC = () => {
@@ -16,9 +15,11 @@ export const Home: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [filter, setFilter] = useState<"image" | "video" | "audio">("image");
+  const [hasSearched, setHasSearched] = useState(false); // New state to track search
 
   const handleSearch = async (query: string) => {
     setLoading(true);
+    setHasSearched(true); // Mark as searched
     try {
       const assets = await searchAssets(query, filter);
       setResults(assets);
@@ -39,9 +40,9 @@ export const Home: React.FC = () => {
     setCurrentPage(page);
   };
 
-   const handleFilterChange = (newFilter: "image" | "video" | "audio") => {
-     setFilter(newFilter);
-   };
+  const handleFilterChange = (newFilter: "image" | "video" | "audio") => {
+    setFilter(newFilter);
+  };
 
   return (
     <Layout
@@ -63,7 +64,7 @@ export const Home: React.FC = () => {
           <div className="flex items-center justify-center w-full h-64">
             <ScaleLoader color={"#ffffff"} loading={loading} />
           </div>
-        ) : results.length === 0 ? ( // checking if no results exist
+        ) : hasSearched && results.length === 0 ? ( // Check only after search
           <div className="flex items-center justify-center w-full h-64">
             <p className="text-xl font-semibold text-gray-500">
               No results found
