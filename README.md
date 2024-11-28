@@ -87,8 +87,8 @@ Follow these steps to set up the project locally.
 
 **Clone the repository**
    ```bash
-   git clone https://github.com/heispapijay/nasa-project.git
-   cd nasa-project
+   git clone https://github.com/heispapijay/nasa-project-v0.git
+   cd nasa-project-v0
 ```
 
 **Installation**
