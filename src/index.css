@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.border-box {
+    position: fixed;
+    top: 20px; 
+    bottom: 20px;
+    border-radius: 20px;
+    left: 20px;
+    right: 20px;
+    border: 2px solid #fff;
+    pointer-events: none; 
+    z-index: 1000; 
+}
+
+.border-box-2 {
+    position: fixed;
+    top: 0; 
+    bottom: 0;
+    border-radius: 0;
+    left: 0;
+    right: 0;
+    border: 20px solid #000;
+    pointer-events: none; 
+    z-index: 1000; 
+}
+
+
+ .custom-shadow {
+     box-shadow: 2px 2px 1px rgba(225, 225, 225, 1);
+ }
+
+     .shape {
+        position: absolute;
+        bottom: 10vh;
+        left: 25vw;
+        z-index: -1;
+        width: 10vw;
+        opacity: 0.25;
+        user-select: none;
+        -webkit-user-drag: none;
+        transform-origin: bottom left;
+    }
+
+    .shape-md {
+        top: 2.5vh;
+        left: 2.5vw;
+        width: 15vw;
+        transform-origin: top;
+    }
+
+    .shape-lg {
+        top: 25vh;
+        right: 10vw;
+        left: auto;
+        width: 20vw;
+        transform-origin: bottom right;
+    }
+
+
+    .showcase {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    isolation: isolate;
+}
+
+.showcase::before {
+    content: "";
+    position: fixed;
+    top: -150%;
+    left: -100%;
+    z-index: -1;
+    width: 350%;
+    height: 350%;
+    background-image: url("./assets/grain.png");
+    opacity: 0.25;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .showcase::before {
+        animation: grain 5s steps(10) infinite;
+    }
+
+    .has-in-common {
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+        animation-delay: var(--delay);
+    }
+ @keyframes grain {
+        0%,
+        100% {
+            transform: translate(0);
+        }
+        10% {
+            transform: translate(-5%, -10%);
+        }
+        20% {
+            transform: translate(-15%, 5%);
+        }
+        30% {
+            transform: translate(7%, -25%);
+        }
+        40% {
+            transform: translate(-5%, 25%);
+        }
+        50% {
+            transform: translate(-15%, 5%);
+        }
+        60% {
+            transform: translate(15%);
+        }
+        70% {
+            transform: translateY(15%);
+        }
+        80% {
+            transform: translate(3%, 35%);
+        }
+        90% {
+            transform: translate(-10%, 10%);
+        }
+    }
+}
