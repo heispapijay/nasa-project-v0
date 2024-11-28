@@ -6,7 +6,7 @@ interface ItemCardProps {
 }
 
 export const ItemCard: React.FC<ItemCardProps> = ({ asset }) => {
-  const thumbnail = asset.links?.[0]?.href || "/src/assets/logo-removebg-preview.png";
+  const thumbnail = asset.links?.[0]?.href || "/logo-removebg-preview.png";
   const title = asset.data[0]?.title;
   const nasaId = asset.data[0]?.nasa_id;
   const mediaType = asset.data[0]?.media_type || "unknown";
